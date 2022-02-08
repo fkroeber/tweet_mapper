@@ -6,8 +6,9 @@ import java.io.IOException;
 public class KMLGenerator {
 
 	// define basic instance variables
-	String kmlstring;
-	
+	public String kmlstring;
+
+	// constructor to compose well-formed kml document given certain kml elements
 	public KMLGenerator(String[] kml_elements) {
 		// compose kml body
 		String kml_body = "";
@@ -15,15 +16,15 @@ public class KMLGenerator {
 			kml_body += kml_elements[i];
 		}
 		// embed body in kml skeleton
-		kmlstring = "" +
-		"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-		"<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n" +
-		"<Document>\n" +
-		kml_body + 
-		"\n</Document>\n" +
-		"</kml>\n";
+		kmlstring = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+					"<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n" +
+						"<Document>\n" +
+							kml_body + "\n" +
+						"</Document>\n" +
+					"</kml>\n";
 	}
-	
+
+	// method to save kml file to disk
 	public void savefile(String _save_dir) {
 		FileWriter fileWriter;
 		try {

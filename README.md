@@ -12,4 +12,4 @@ The app is structured as follows:
 * KMLElements: class that specifies how to represent the tweets in the kml file
 * KMLGenerator: class that provides the skeleton for the kml file generation
 
-The main class calls all other classes and finally opens the created kml file using the local installation of GoogleEarthPro if available. For a more detailed documentation of the structure & design of the application see: *to be added*
+The main class calls all other classes and finally opens the created kml file using the local installation of GoogleEarthPro if available.
